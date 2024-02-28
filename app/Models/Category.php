@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Schema;
 
 class Category extends Model
 {
-    protected $table = 'categoryes'; // Tên của bảng
+    protected $table = 'categories'; // Tên của bảng
 
     protected $fillable = ['Name_Catogory']; // Các cột có thể gán giá trị
 
