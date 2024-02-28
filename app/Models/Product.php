@@ -25,8 +25,9 @@ class Product extends Model
     // Định nghĩa các liên kết với các bảng khác
     public function category()
     {
-        return $this->belongsTo(Category::class, 'ID_Category');
+        return $this->belongsTo(Category::class, 'ID_Category', 'ID_Category');
     }
+
 
     public function brand()
     {
