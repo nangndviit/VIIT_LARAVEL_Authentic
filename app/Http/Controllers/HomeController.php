@@ -20,7 +20,7 @@ class HomeController extends Controller
         $brands = Brand::all();
         $events = Events::all();
 
-        return view("pages.product.all_product", [
+        return view("home", [
             'products' => $products,
             'brands' => $brands,
             'events' => $events

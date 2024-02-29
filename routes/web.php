@@ -16,15 +16,17 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+// trang của laravel
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/index', function () {
-    return view('home');
-});
 
+// Route::get('/index', function () {
+//     return view('home');
+// });
+
+// trang của authentic
 Route::get('/index', [HomeController::class, 'index']);
 // Route::get('/index', [BrandController::class, 'index']);
 // Route::get('/index', [EventsController::class, 'index']);

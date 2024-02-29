@@ -30,7 +30,28 @@
                 </p>
 
                 <ul class="grid-list">
-                    @yield('content')
+                    @foreach ($products as $product)
+                        @if ($product->category->Name_Catogory == 'Giày Nike')
+                            <li>
+                                <div class="product-card">
+                                    <div class="card-banner">
+                                        <div class="like-img">
+                                            <img src="{{ $product->Anh_SP1 }}" />
+                                        </div>
+                                        <div class="top-img">
+                                            <img src="{{ $product->Anh_SP2 }}" alt="Commodo leo sed porta" />
+                                        </div>
+                                        <i class="fa-regular fa-heart"></i>
+                                    </div>
+                                    <div class="card-content">
+                                        <p>{{ $product->category->Name_Catogory }}</p>
+                                        <a href="#">{{ $product->Ten_SP }}</a>
+                                        <bdi>{{ $product->Gia_SP }} VNĐ</bdi>
+                                    </div>
+                                </div>
+                            </li>
+                        @endif
+                    @endforeach
                 </ul>
 
                 <div class="xem">
@@ -63,10 +84,8 @@
                 </div>
 
             </div>
-            <div class="image_res"
-                style="overflow: hidden; max-height: 300px; height: 100%; display: flex; justify-content: center; align-items: center;">
-                <img style="width: 100%; height: 100%; object-fit: cover"
-                    src="https://cdn.authentic-shoes.com/wp-content/uploads/2023/09/Adidas-Yeezy-Slide-2048x648.webp"
+            <div class="image_res">
+                <img src="https://cdn.authentic-shoes.com/wp-content/uploads/2023/09/Adidas-Yeezy-Slide-2048x648.webp"
                     alt />
             </div>
         </section>
@@ -80,7 +99,28 @@
                     bật</p>
 
                 <ul class="grid-list">
-                    @yield('content')
+                    @foreach ($products as $product)
+                        @if ($product->category->Name_Catogory == 'Giày Sneaker')
+                            <li>
+                                <div class="product-card">
+                                    <div class="card-banner">
+                                        <div class="like-img">
+                                            <img src="{{ $product->Anh_SP1 }}" />
+                                        </div>
+                                        <div class="top-img">
+                                            <img src="{{ $product->Anh_SP2 }}" alt="Commodo leo sed porta" />
+                                        </div>
+                                        <i class="fa-regular fa-heart"></i>
+                                    </div>
+                                    <div class="card-content">
+                                        <p>{{ $product->category->Name_Catogory }}</p>
+                                        <a href="#">{{ $product->Ten_SP }}</a>
+                                        <bdi>{{ $product->Gia_SP }} VNĐ</bdi>
+                                    </div>
+                                </div>
+                            </li>
+                        @endif
+                    @endforeach
                 </ul>
 
                 <div class="xem1">
@@ -89,10 +129,8 @@
                         <i class="fa-solid fa-angle-right"></i>
                     </button>
                 </div>
-                <div class="image_res"
-                    style="overflow: hidden; max-height: 300px; height: 100%; display: flex; justify-content: center; align-items: center;">
-                    <img style="width: 100%; height: 100%; object-fit: cover"
-                        src="https://cdn.authentic-shoes.com/wp-content/uploads/2023/11/retro-4-olive-3-1-2048x1331.webp"
+                <div class="image_res">
+                    <img src="https://cdn.authentic-shoes.com/wp-content/uploads/2023/11/retro-4-olive-3-1-2048x1331.webp"
                         alt />
                 </div>
             </div>
@@ -108,7 +146,28 @@
                     2023</p>
 
                 <ul class="grid-list">
-                    @yield('content')
+                    @foreach ($products as $product)
+                        @if ($product->category->Name_Catogory == 'Giày Adidas')
+                            <li>
+                                <div class="product-card">
+                                    <div class="card-banner">
+                                        <div class="like-img">
+                                            <img src="{{ $product->Anh_SP1 }}" />
+                                        </div>
+                                        <div class="top-img">
+                                            <img src="{{ $product->Anh_SP2 }}" alt="Commodo leo sed porta" />
+                                        </div>
+                                        <i class="fa-regular fa-heart"></i>
+                                    </div>
+                                    <div class="card-content">
+                                        <p>{{ $product->category->Name_Catogory }}</p>
+                                        <a href="#">{{ $product->Ten_SP }}</a>
+                                        <bdi>{{ $product->Gia_SP }} VNĐ</bdi>
+                                    </div>
+                                </div>
+                            </li>
+                        @endif
+                    @endforeach
                 </ul>
             </div>
             <div class="xem1">
@@ -117,10 +176,8 @@
                     <i class="fa-solid fa-angle-right"></i>
                 </button>
             </div>
-            <div class="image_res"
-                style="overflow: hidden; max-height: 300px; height: 100%; display: flex; justify-content: center; align-items: center;">
-                <img style="width: 100%; height: 100%; object-fit: cover"
-                    src="https://bazaarvietnam.vn/wp-content/uploads/2022/09/top-3-thuong-hieu-giay-sneaker-noi-dia-duoc-long-gioi-tre-viet-8.jpg"
+            <div class="image_res">
+                <img src="https://bazaarvietnam.vn/wp-content/uploads/2022/09/top-3-thuong-hieu-giay-sneaker-noi-dia-duoc-long-gioi-tre-viet-8.jpg"
                     alt />
             </div>
         </section>
@@ -134,7 +191,28 @@
                     bật</p>
 
                 <ul class="grid-list">
-                    @yield('content')
+                    @foreach ($products as $product)
+                        @if ($product->category->Name_Catogory == 'Phụ Kiện')
+                            <li>
+                                <div class="product-card">
+                                    <div class="card-banner">
+                                        <div class="like-img">
+                                            <img src="{{ $product->Anh_SP1 }}" />
+                                        </div>
+                                        <div class="top-img">
+                                            <img src="{{ $product->Anh_SP2 }}" alt="Commodo leo sed porta" />
+                                        </div>
+                                        <i class="fa-regular fa-heart"></i>
+                                    </div>
+                                    <div class="card-content">
+                                        <p>{{ $product->category->Name_Catogory }}</p>
+                                        <a href="#">{{ $product->Ten_SP }}</a>
+                                        <bdi>{{ $product->Gia_SP }} VNĐ</bdi>
+                                    </div>
+                                </div>
+                            </li>
+                        @endif
+                    @endforeach
                 </ul>
                 <div class="xem">
                     <button class="btnn">

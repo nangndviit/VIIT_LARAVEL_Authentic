@@ -14,11 +14,11 @@ class EventsController extends Controller
      */
     public function index()
     {
-        $events = Events::all();
+        // $events = Events::all();
 
-        return view("pages.main", [
-            'events' => $events
-        ]);
+        // return view("pages.main", [
+        //     'events' => $events
+        // ]);
     }
 
     /**
