@@ -26,4 +26,5 @@ Route::get('/index', function () {
 });
 
 Route::get('/index', [HomeController::class, 'index']);
+// Route::get('/index', [BrandController::class, 'index']);
 // Route::get('/index', [EventsController::class, 'index']);
