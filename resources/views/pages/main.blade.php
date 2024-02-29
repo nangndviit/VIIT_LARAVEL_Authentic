@@ -1,22 +1,11 @@
 <main>
     <article>
         <!--- #giới thiệu-->
-        @include('pages.slider.slider')
+        @include('pages.main_list.slider')
 
         <!-- hãng sản phẩm -->
 
-        <section class="section brand">
-            <div class="container">
-                <div class="wrapper">
-                    <div class="button-container">
-                        <p class="but">Giày</p>
-                        <p class="but">Quần Áo</p>
-                        <p class="but">Phụ Kiện</p>
-                        <p class="but">Brand</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+        @include('pages.main_list.wrapper')
 
         <!-- Sản phẩm1-->
 
@@ -64,31 +53,7 @@
 
         <!-- Thương hiệu -->
 
-        <section class="section brand" aria-label="brand">
-            <div class="container">
-                <h4>Thương Hiệu Nổi Bật</h4>
-                <p class="thanhp">Mặt hàng giày các thương hiệu nổi
-                    bật</p>
-
-                <div class="bran__list">
-                    @foreach ($brands as $brand)
-                        <div class="bran__item">
-                            <div class="bran__top">
-                                <div class="bran__image">
-                                    <img src="{{ $brand->Anh_Brand }}" alt="{{ $brand->Name_Brand }}" />
-                                </div>
-                            </div>
-                            <h3 class="bran__name">{{ $brand->Name_Brand }}</h3>
-                        </div>
-                    @endforeach
-                </div>
-
-            </div>
-            <div class="image_res">
-                <img src="https://cdn.authentic-shoes.com/wp-content/uploads/2023/09/Adidas-Yeezy-Slide-2048x648.webp"
-                    alt />
-            </div>
-        </section>
+        @include('pages.main_list.brand')
 
         <!-- sản phẩm3 -->
 
@@ -225,28 +190,6 @@
 
         <!-- sự kiện -->
 
-        <section class="section brand" aria-label="brand">
-            <div class="container">
-                <h4>Tin Tức - Sự Kiện</h4>
-                <p class="thanhp">Tin tức phổ biến</p>
-
-                <div class="new__list">
-                    @foreach ($events as $event)
-                        <div class="new__item">
-                            <div class="new__top">
-                                <div class="new__image">
-                                    <img src="{{ $event->Anh_Events }}" alt="{{ $event->Ten_Events }}" />
-                                </div>
-                            </div>
-                            <h5 class="new__name">
-                                <p>
-                                    <b>{{ $event->Ten_Events }}</b>
-                                </p>
-                            </h5>
-                        </div>
-                    @endforeach
-                </div>
-            </div>
-        </section>
+        @include('pages.main_list.new')
     </article>
 </main>
