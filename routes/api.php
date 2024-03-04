@@ -26,3 +26,6 @@ Route::apiResource('brand', BrandController::class);
 Route::resource('cate', CateController::class);
 Route::resource('events', EventsController::class);
 Route::resource('products', ProductController::class);
+
+
+Route::get('/cate-show', [CateController::class, 'show']);

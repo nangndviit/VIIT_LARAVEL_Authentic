@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Category;
+use App\Models\Product;
 
 class CateController extends Controller
 {
@@ -34,9 +35,22 @@ class CateController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        return Category::findOrFail($id);
+        $data = [];
+        $categories = Category::all();
+        $products = Product::all();
+
+        // dd($categories);
+        foreach ($categories as $category) {
+            $category['products'] = Product::where('ID_Category', $category->ID_Category)->limit(8)->get();
+            $data[] = $category;
+        }
+
+
+        return response()->json([
+            'data' => $data,
+        ]);
     }
 
     /**
