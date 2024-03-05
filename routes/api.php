@@ -23,9 +23,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::apiResource('brand', BrandController::class);
-Route::resource('cate', CateController::class);
+Route::resource('catesss', CateController::class);
 Route::resource('events', EventsController::class);
 Route::resource('products', ProductController::class);
 
+Route::get('/cate-show/{id}', [CateController::class, 'show']);
 
-Route::get('/cate-show', [CateController::class, 'show']);
+Route::get("/cate/show1", [CateController::class, "show1"]);

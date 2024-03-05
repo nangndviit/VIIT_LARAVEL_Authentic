@@ -35,7 +35,22 @@ class CateController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show()
+    // lấy ra các sản phẩm theo id của n
+    public function show($categoryId)
+    {
+        // Lấy đối tượng danh mục theo ID
+        $category = Category::findOrFail($categoryId);
+
+        // Lấy danh sách sản phẩm của danh mục đó
+        // $products = $category->products;
+        $category->setRelation('products', $category->products->take(4));
+
+        return response()->json([
+            'category' => $category,
+        ]);
+    }
+
+    public function show1()
     {
         $data = [];
         $categories = Category::all();

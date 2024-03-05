@@ -11,6 +11,8 @@ class Category extends Model
 {
     protected $table = 'categories'; // Tên của bảng
 
+    protected $primaryKey = 'ID_Category';
+
     protected $fillable = ['Name_Catogory']; // Các cột có thể gán giá trị
 
     // Các sản phẩm thuộc danh mục này
