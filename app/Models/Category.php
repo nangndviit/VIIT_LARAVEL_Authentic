@@ -16,6 +16,8 @@ class Category extends Model
     protected $fillable = ['Name_Catogory']; // Các cột có thể gán giá trị
 
     // Các sản phẩm thuộc danh mục này
+
+    public $timestamps = false;
     public function products()
     {
         return $this->hasMany(Product::class, 'ID_Category');
