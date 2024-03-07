@@ -19,59 +19,60 @@ class EventsController extends Controller
         return response()->json($events);
     }
 
-    /**
-     * Hiển thị thông tin của một sự kiện cụ thể.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        $event = Events::findOrFail($id);
-        return response()->json($event);
-    }
-
-    /**
-     * Tạo sự kiện mới.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function create(Request $request)
     {
         $event = new Events();
-        $event->name = $request->input('name');
-        $event->description = $request->input('description');
-        $event->save();
-        return response()->json($event, 201);
+
+        $event->Ten_Events = $request->Ten_Events;
+        $event->Anh_Events = $request->Anh_Events;
+
+        $data = $event->save();
+        if ($data) {
+            return response()->json([
+                // 'error' => 400,
+                // 'message' => 'something'
+                $event
+            ]);
+        } else {
+            return response()->json([
+                // 'status' => 200,
+                // 'message' => 'data success saved'
+                $event
+            ]);
+        }
     }
 
-    /**
-     * Cập nhật thông tin của một sự kiện.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+    public function updateBtid(Request $request, $id)
     {
         $event = Events::findOrFail($id);
-        $event->name = $request->input('name');
-        $event->description = $request->input('description');
-        $event->save();
-        return response()->json($event);
-    }
 
-    /**
-     * Xóa một sự kiện.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
+        $validatedData = $request->validate([
+            'Ten_Events' => 'required|string|max:255',
+            'Anh_Events' => 'required|string|max:255',
+        ]);
+
+        $event->update($validatedData);
+
+        return response()->json([
+            'status' => 200,
+            'message' => 'Event updated successfully',
+            'data' => $event
+        ]);
+    }
+    public function deleteBtid($id)
     {
         $event = Events::findOrFail($id);
-        $event->delete();
-        return response()->json(null, 204);
+
+        if ($event->delete()) {
+            return response()->json([
+                'status' => 200,
+                'message' => 'Đã xóa xong'
+            ]);
+        } else {
+            return response()->json([
+                'error' => 400,
+                'message' => 'Chưa xóa được'
+            ]);
+        }
     }
 }

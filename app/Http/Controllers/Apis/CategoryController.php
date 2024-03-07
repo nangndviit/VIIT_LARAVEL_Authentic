@@ -92,7 +92,7 @@ class CategoryController extends Controller
         }
     }
 
-    public function updatebtid(Request $request, $id)
+    public function updateBtid(Request $request, $id)
     {
         $category = Category::findOrFail($id);
 
@@ -111,7 +111,7 @@ class CategoryController extends Controller
         ]);
     }
 
-    public function deletebtid($id)
+    public function deleteBtid($id)
     {
         $category = Category::findOrFail($id);
 

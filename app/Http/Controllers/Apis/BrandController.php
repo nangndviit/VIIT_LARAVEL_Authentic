@@ -25,45 +25,61 @@ class BrandController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function create(Request $request)
     {
-        return Brand::create($request->all());
+        $brands = new Brand();
+
+        $brands->Name_Brand = $request->Name_Brand;
+        $brands->Anh_Brand = $request->Anh_Brand;
+
+        $data = $brands->save();
+        if ($data) {
+            return response()->json([
+                // 'error' => 400,
+                // 'message' => 'something'
+                $brands
+            ]);
+        } else {
+            return response()->json([
+                // 'status' => 200,
+                // 'message' => 'data success saved'
+                $brands
+            ]);
+        }
     }
 
-    /**
-     * Hiển thị thông tin của brand cụ thể.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        return Brand::findOrFail($id);
-    }
 
-    /**
-     * Cập nhật thông tin của brand.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+    public function updateBtid(Request $request, $id)
     {
-        $brand = Brand::findOrFail($id);
-        $brand->update($request->all());
-        return $brand;
-    }
+        $brand = Brand::findOrFail($id); // Sử dụng Brand thay vì $brands
 
-    /**
-     * Xóa brand khỏi cơ sở dữ liệu.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
+        $validatedData = $request->validate([
+            'Name_Brand' => 'required|string|max:255',
+            'Anh_Brand' => 'required|string|max:255',
+        ]);
+
+        $brand->update($validatedData); // Sử dụng $brand thay vì $brands
+
+        return response()->json([
+            'status' => 200,
+            'message' => 'Brand updated successfully',
+            'data' => $brand // Sử dụng $brand thay vì $brands
+        ]);
+    }
+    public function deleteBtid($id)
     {
-        $brand = Brand::findOrFail($id);
-        $brand->delete();
+        $brans = Brand::findOrFail($id);
+
+        if ($brans->delete()) {
+            return response()->json([
+                'status' => 200,
+                'message' => 'Đã xóa xong'
+            ]);
+        } else {
+            return response()->json([
+                'error' => 400,
+                'message' => 'Chưa xóa được'
+            ]);
+        }
     }
 }

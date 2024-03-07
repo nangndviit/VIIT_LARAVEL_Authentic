@@ -9,6 +9,7 @@ class Brand extends Model
 {
     protected $table = 'brands'; // Tên của bảng
 
+    protected $primaryKey = 'ID_Brand';
     protected $fillable = ['Name_Brand', 'Anh_Brand'];
 
     public function products()
