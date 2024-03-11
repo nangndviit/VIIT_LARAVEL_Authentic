@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 
 use App\Models\Category;
 use App\Models\Product;
-use PhpParser\Node\Expr\New_;
 
 class CategoryController extends Controller
 {
@@ -29,45 +28,8 @@ class CategoryController extends Controller
         return response()->json([
             'data' => $categories,
         ]);
-
-        // $data = [];
-        // $categories = Category::all();
-        // $products = Product::all();
-
-        // // dd($categories);
-        // foreach ($categories as $category) {
-        //     $category['products'] = Product::where('ID_Category', $category->ID_Category)->limit(6)->get();
-        //     $data[] = $category;
-        // }
-
-        // return response()->json([
-        //     'data' => $data,
-        // ]);
     }
 
-    // public function index(Request $req)
-    // {
-    //     $categories = new Category();
-
-    //     $categories->Name_Catogory = $req->Name_Catogory;
-    //     $categories->title = $req->title;
-    //     $categories->description = $req->description;
-
-    //     $data = $categories->save();
-    //     if ($data) {
-    //         return response()->json([
-    //             // 'error' => 400,
-    //             // 'message' => 'something'
-    //             $categories
-    //         ]);
-    //     } else {
-    //         return response()->json([
-    //             // 'status' => 200,
-    //             // 'message' => 'data success saved'
-    //             $categories
-    //         ]);
-    //     }
-    // }
     public function create(Request $req)
     {
         $categories = new Category();
@@ -79,14 +41,10 @@ class CategoryController extends Controller
         $data = $categories->save();
         if ($data) {
             return response()->json([
-                // 'error' => 400,
-                // 'message' => 'something'
                 $categories
             ]);
         } else {
             return response()->json([
-                // 'status' => 200,
-                // 'message' => 'data success saved'
                 $categories
             ]);
         }

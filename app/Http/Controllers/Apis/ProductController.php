@@ -33,14 +33,10 @@ class ProductController extends Controller
         $data = $product->save();
         if ($data) {
             return response()->json([
-                // 'error' => 400,
-                // 'message' => 'something'
                 $product
             ]);
         } else {
             return response()->json([
-                // 'status' => 200,
-                // 'message' => 'data success saved'
                 $product
             ]);
         }

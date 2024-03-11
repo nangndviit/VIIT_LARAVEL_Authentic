@@ -35,14 +35,10 @@ class BrandController extends Controller
         $data = $brands->save();
         if ($data) {
             return response()->json([
-                // 'error' => 400,
-                // 'message' => 'something'
                 $brands
             ]);
         } else {
             return response()->json([
-                // 'status' => 200,
-                // 'message' => 'data success saved'
                 $brands
             ]);
         }
@@ -51,19 +47,19 @@ class BrandController extends Controller
 
     public function updateBtid(Request $request, $id)
     {
-        $brand = Brand::findOrFail($id); // Sử dụng Brand thay vì $brands
+        $brand = Brand::findOrFail($id);
 
         $validatedData = $request->validate([
             'Name_Brand' => 'required|string|max:255',
             'Anh_Brand' => 'required|string|max:255',
         ]);
 
-        $brand->update($validatedData); // Sử dụng $brand thay vì $brands
+        $brand->update($validatedData);
 
         return response()->json([
             'status' => 200,
             'message' => 'Brand updated successfully',
-            'data' => $brand // Sử dụng $brand thay vì $brands
+            'data' => $brand
         ]);
     }
     public function deleteBtid($id)

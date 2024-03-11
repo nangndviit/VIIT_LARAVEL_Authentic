@@ -29,14 +29,10 @@ class EventsController extends Controller
         $data = $event->save();
         if ($data) {
             return response()->json([
-                // 'error' => 400,
-                // 'message' => 'something'
                 $event
             ]);
         } else {
             return response()->json([
-                // 'status' => 200,
-                // 'message' => 'data success saved'
                 $event
             ]);
         }
