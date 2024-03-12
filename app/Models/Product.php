@@ -18,6 +18,8 @@ class Product extends Model
         'ID_Brand',
         'Ten_SP',
         'Gia_SP',
+        'Gia_SP2',
+        'Mo_Ta',
         'Anh_SP1',
         'Anh_SP2',
     ];

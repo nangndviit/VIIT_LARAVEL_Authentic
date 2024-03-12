@@ -17,6 +17,8 @@ return new class extends Migration
             $table->unsignedBigInteger('ID_Brand');
             $table->string('Ten_SP');
             $table->decimal('Gia_SP', 10, 2);
+            $table->string('Gia_SP2');
+            $table->string('Mo_Ta');
             $table->string('Anh_SP1')->nullable();
             $table->string('Anh_SP2')->nullable();
 

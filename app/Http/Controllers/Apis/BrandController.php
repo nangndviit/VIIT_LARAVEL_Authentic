@@ -45,7 +45,7 @@ class BrandController extends Controller
     }
 
 
-    public function updateBtid(Request $request, $id)
+    public function update(Request $request, $id)
     {
         $brand = Brand::findOrFail($id);
 
@@ -62,7 +62,7 @@ class BrandController extends Controller
             'data' => $brand
         ]);
     }
-    public function deleteBtid($id)
+    public function delete($id)
     {
         $brans = Brand::findOrFail($id);
 

@@ -8,11 +8,6 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    /**
-     * Hiển thị danh sách sản phẩm.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         $products = Product::all();
@@ -42,7 +37,7 @@ class ProductController extends Controller
         }
     }
 
-    public function updateBtid(Request $request, $id)
+    public function update(Request $request, $id)
     {
         $product = Product::findOrFail($id);
 
@@ -64,7 +59,7 @@ class ProductController extends Controller
         ]);
     }
 
-    public function deleteBtid($id)
+    public function delete($id)
     {
         $product = Product::findOrFail($id);
 
@@ -79,5 +74,16 @@ class ProductController extends Controller
                 'message' => 'Chưa xóa được'
             ]);
         }
+    }
+
+    public function show($id)
+    {
+        $product = Product::find($id);
+
+        if (!$product) {
+            return response()->json(['message' => 'Product not found'], 404);
+        }
+
+        return response()->json($product);
     }
 }

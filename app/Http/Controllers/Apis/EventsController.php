@@ -38,7 +38,7 @@ class EventsController extends Controller
         }
     }
 
-    public function updateBtid(Request $request, $id)
+    public function update(Request $request, $id)
     {
         $event = Events::findOrFail($id);
 
@@ -55,7 +55,7 @@ class EventsController extends Controller
             'data' => $event
         ]);
     }
-    public function deleteBtid($id)
+    public function delete($id)
     {
         $event = Events::findOrFail($id);
 

@@ -50,7 +50,7 @@ class CategoryController extends Controller
         }
     }
 
-    public function updateBtid(Request $request, $id)
+    public function update(Request $request, $id)
     {
         $category = Category::findOrFail($id);
 
@@ -69,7 +69,7 @@ class CategoryController extends Controller
         ]);
     }
 
-    public function deleteBtid($id)
+    public function delete($id)
     {
         $category = Category::findOrFail($id);
 
@@ -91,9 +91,4 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        $category = Category::findOrFail($id);
-        $category->delete();
-    }
 }
