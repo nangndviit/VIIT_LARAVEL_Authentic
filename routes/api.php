@@ -4,7 +4,7 @@ use App\Http\Controllers\Apis\BrandController;
 use App\Http\Controllers\Apis\CategoryController;
 use App\Http\Controllers\Apis\EventsController;
 use App\Http\Controllers\Apis\ProductController;
-use App\Http\Controllers\CateController;
+use App\Http\Controllers\Apis\SizegiayController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -53,4 +53,8 @@ Route::prefix('products')->group(function () {
     Route::get('show/{id}', [ProductController::class, 'show'])->name('products.show'); //show products
     Route::put('update/{id}', [ProductController::class, 'update'])->name('products.update'); //sửa products
     Route::delete('delete/{id}', [ProductController::class, 'delete'])->name('products.delete');   //xóa products
+});
+
+Route::prefix('size')->group(function () {
+    Route::get('index', [SizegiayController::class, 'index'])->name('size.index');
 });
