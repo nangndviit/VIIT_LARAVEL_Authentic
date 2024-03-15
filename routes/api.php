@@ -53,8 +53,9 @@ Route::prefix('products')->group(function () {
     Route::get('show/{id}', [ProductController::class, 'show'])->name('products.show'); //show products
     Route::put('update/{id}', [ProductController::class, 'update'])->name('products.update'); //sửa products
     Route::delete('delete/{id}', [ProductController::class, 'delete'])->name('products.delete');   //xóa products
+    Route::get('takePounds/{id}', [ProductController::class, 'takePounds'])->name('products.takePounds');
 });
 
 Route::prefix('size')->group(function () {
-    Route::get('index', [SizegiayController::class, 'index'])->name('size.index');
+    Route::get('/', [SizegiayController::class, 'index'])->name('size.index');
 });

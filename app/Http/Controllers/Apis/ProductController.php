@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Apis;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use App\Models\Product;
+use App\Models\Sizegiay;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -85,5 +87,18 @@ class ProductController extends Controller
         }
 
         return response()->json($product);
+    }
+
+    public function takePounds($id)
+    {
+        $product = Product::with('category', 'sizes')->find($id);
+
+        if (!$product) {
+            return response()->json(['message' => 'Không tìm thấy sản phẩm'], 404);
+        }
+
+        return response()->json([
+            'data' => $product
+        ]);
     }
 }

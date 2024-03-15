@@ -11,6 +11,7 @@ class CreateSizegiayTable extends Migration
         Schema::create('sizegiay', function (Blueprint $table) {
             $table->id();
             $table->string('size_name');
+            $table->string('size_ton');
             $table->timestamps();
         });
     }

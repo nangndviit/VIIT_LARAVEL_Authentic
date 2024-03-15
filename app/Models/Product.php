@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
@@ -24,12 +23,17 @@ class Product extends Model
         'Anh_SP2',
     ];
 
+    // Định nghĩa mối quan hệ nhiều-nhiều với bảng Sizegiay
+    public function sizes()
+    {
+        return $this->belongsToMany(Sizegiay::class, 'product_size', 'ID_SP', 'size_id');
+    }
+
     // Định nghĩa các liên kết với các bảng khác
     public function category()
     {
         return $this->belongsTo(Category::class, 'ID_Category', 'ID_Category');
     }
-
 
     public function brand()
     {

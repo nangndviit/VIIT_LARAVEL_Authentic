@@ -11,7 +11,7 @@ return new class extends Migration
         Schema::create('brands', function (Blueprint $table) {
             $table->bigIncrements('ID_Brand');
             $table->string('Name_Brand');
-            $table->string('Anh_Brand')->nullable(); // Thêm cột Anh_Brand với khả năng null
+            $table->string('Anh_Brand')->nullable();
             $table->timestamps();
         });
     }
