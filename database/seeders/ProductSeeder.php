@@ -45,6 +45,16 @@ class ProductSeeder extends Seeder
                 'Anh_SP2' => 'https://www.chuphinhsanpham.vn/wp-content/uploads/2021/06/chup-hinh-giay-dincox-shoes-c-photo-studio-4.jpg',
             ],
             [
+                'ID_Category' => 1,
+                'ID_Brand' => 1,
+                'Ten_SP' => 'Giày Nike Air Force 1 ’07 ‘White’ 315122-111',
+                'Gia_SP' => 800.000,
+                'Gia_SP2' => 800.000,
+                'Mo_Ta' => 'Mua Giày Nike Air Jordan 1 Low ‘Panda’ DC0774-101 chính hãng 100% có sẵn tại Authentic Shoes. Giao hàng miễn phí trong 1 ngày.Cam kết đền tiền X5 nếu phát hiện Fake. Đổi trả miễn phí size. FREE vệ sinh giày trọn đời. MUA NGAY!',
+                'Anh_SP1' => 'https://cdn.authentic-shoes.com/wp-content/uploads/2023/04/240_01.jpg_34183f6907ea4533beb58f70876f9325.jpeg',
+                'Anh_SP2' => 'https://www.chuphinhsanpham.vn/wp-content/uploads/2021/06/chup-hinh-giay-dincox-shoes-c-photo-studio-4.jpg',
+            ],
+            [
                 'ID_Category' => 2,
                 'ID_Brand' => 2,
                 'Ten_SP' => 'Giày Nike Air Jordan 1 Low ‘Obsidian Ember Glow’ 553558-481',

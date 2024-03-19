@@ -11,6 +11,10 @@ class SizegiayController extends Controller
     public function index()
     {
         $sizes = Sizegiay::all();
+        foreach($sizes as $key => $size) {
+            $products = $size->products->count();
+            $sizes['products'] = $products;
+        }
         return response()->json($sizes);
     }
 }

@@ -92,7 +92,6 @@ class ProductController extends Controller
     public function takePounds($id)
     {
         $product = Product::with('category', 'sizes')->find($id);
-
         if (!$product) {
             return response()->json(['message' => 'Không tìm thấy sản phẩm'], 404);
         }
