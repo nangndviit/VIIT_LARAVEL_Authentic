@@ -13,11 +13,12 @@ class ProductSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('products')->insert([
+        $products = [
             [
                 'ID_Category' => 1,
                 'ID_Brand' => 1,
                 'Ten_SP' => 'Giày Nike Air Force 1 ’07 ‘White’ 315122-111',
+
                 'Gia_SP' => 800.000,
                 'Gia_SP2' => 800.000,
                 'Mo_Ta' => 'Mua Giày Nike Air Jordan 1 Low ‘Panda’ DC0774-101 chính hãng 100% có sẵn tại Authentic Shoes. Giao hàng miễn phí trong 1 ngày.Cam kết đền tiền X5 nếu phát hiện Fake. Đổi trả miễn phí size. FREE vệ sinh giày trọn đời. MUA NGAY!',
@@ -38,6 +39,7 @@ class ProductSeeder extends Seeder
                 'ID_Category' => 1,
                 'ID_Brand' => 1,
                 'Ten_SP' => 'Giày Nike Air Force 1 ’07 ‘White’ 315122-111',
+
                 'Gia_SP' => 800.000,
                 'Gia_SP2' => 800.000,
                 'Mo_Ta' => 'Mua Giày Nike Air Jordan 1 Low ‘Panda’ DC0774-101 chính hãng 100% có sẵn tại Authentic Shoes. Giao hàng miễn phí trong 1 ngày.Cam kết đền tiền X5 nếu phát hiện Fake. Đổi trả miễn phí size. FREE vệ sinh giày trọn đời. MUA NGAY!',
@@ -48,6 +50,7 @@ class ProductSeeder extends Seeder
                 'ID_Category' => 1,
                 'ID_Brand' => 1,
                 'Ten_SP' => 'Giày Nike Air Force 1 ’07 ‘White’ 315122-111',
+
                 'Gia_SP' => 800.000,
                 'Gia_SP2' => 800.000,
                 'Mo_Ta' => 'Mua Giày Nike Air Jordan 1 Low ‘Panda’ DC0774-101 chính hãng 100% có sẵn tại Authentic Shoes. Giao hàng miễn phí trong 1 ngày.Cam kết đền tiền X5 nếu phát hiện Fake. Đổi trả miễn phí size. FREE vệ sinh giày trọn đời. MUA NGAY!',
@@ -58,6 +61,7 @@ class ProductSeeder extends Seeder
                 'ID_Category' => 2,
                 'ID_Brand' => 2,
                 'Ten_SP' => 'Giày Nike Air Jordan 1 Low ‘Obsidian Ember Glow’ 553558-481',
+
                 'Gia_SP' => 500.000,
                 'Gia_SP2' => 800.000,
                 'Mo_Ta' => 'Mua Giày Nike Air Jordan 1 Low ‘Panda’ DC0774-101 chính hãng 100% có sẵn tại Authentic Shoes. Giao hàng miễn phí trong 1 ngày.Cam kết đền tiền X5 nếu phát hiện Fake. Đổi trả miễn phí size. FREE vệ sinh giày trọn đời. MUA NGAY!',
@@ -68,6 +72,7 @@ class ProductSeeder extends Seeder
                 'ID_Category' => 2,
                 'ID_Brand' => 2,
                 'Ten_SP' => 'Giày Nike Air Jordan 1 Low ‘Obsidian Ember Glow’ 553558-481',
+
                 'Gia_SP' => 500.000,
                 'Gia_SP2' => 800.000,
                 'Mo_Ta' => 'Mua Giày Nike Air Jordan 1 Low ‘Panda’ DC0774-101 chính hãng 100% có sẵn tại Authentic Shoes. Giao hàng miễn phí trong 1 ngày.Cam kết đền tiền X5 nếu phát hiện Fake. Đổi trả miễn phí size. FREE vệ sinh giày trọn đời. MUA NGAY!',
@@ -78,6 +83,7 @@ class ProductSeeder extends Seeder
                 'ID_Category' => 2,
                 'ID_Brand' => 2,
                 'Ten_SP' => 'Giày Nike Air Jordan 1 Low ‘Obsidian Ember Glow’ 553558-481',
+
                 'Gia_SP' => 500.000,
                 'Gia_SP2' => 800.000,
                 'Mo_Ta' => 'Mua Giày Nike Air Jordan 1 Low ‘Panda’ DC0774-101 chính hãng 100% có sẵn tại Authentic Shoes. Giao hàng miễn phí trong 1 ngày.Cam kết đền tiền X5 nếu phát hiện Fake. Đổi trả miễn phí size. FREE vệ sinh giày trọn đời. MUA NGAY!',
@@ -88,6 +94,7 @@ class ProductSeeder extends Seeder
                 'ID_Category' => 2,
                 'ID_Brand' => 2,
                 'Ten_SP' => 'Giày Nike Air Jordan 1 Low ‘Obsidian Ember Glow’ 553558-481',
+
                 'Gia_SP' => 500.000,
                 'Gia_SP2' => 800.000,
                 'Mo_Ta' => 'Mua Giày Nike Air Jordan 1 Low ‘Panda’ DC0774-101 chính hãng 100% có sẵn tại Authentic Shoes. Giao hàng miễn phí trong 1 ngày.Cam kết đền tiền X5 nếu phát hiện Fake. Đổi trả miễn phí size. FREE vệ sinh giày trọn đời. MUA NGAY!',
@@ -98,6 +105,7 @@ class ProductSeeder extends Seeder
                 'ID_Category' => 2,
                 'ID_Brand' => 2,
                 'Ten_SP' => 'Giày Nike Air Jordan 1 Low ‘Obsidian Ember Glow’ 553558-481',
+
                 'Gia_SP' => 500.000,
                 'Gia_SP2' => 800.000,
                 'Mo_Ta' => 'Mua Giày Nike Air Jordan 1 Low ‘Panda’ DC0774-101 chính hãng 100% có sẵn tại Authentic Shoes. Giao hàng miễn phí trong 1 ngày.Cam kết đền tiền X5 nếu phát hiện Fake. Đổi trả miễn phí size. FREE vệ sinh giày trọn đời. MUA NGAY!',
@@ -108,6 +116,7 @@ class ProductSeeder extends Seeder
                 'ID_Category' => 2,
                 'ID_Brand' => 2,
                 'Ten_SP' => 'Giày Nike Air Jordan 1 Low ‘Obsidian Ember Glow’ 553558-481',
+
                 'Gia_SP' => 500.000,
                 'Gia_SP2' => 800.000,
                 'Mo_Ta' => 'Mua Giày Nike Air Jordan 1 Low ‘Panda’ DC0774-101 chính hãng 100% có sẵn tại Authentic Shoes. Giao hàng miễn phí trong 1 ngày.Cam kết đền tiền X5 nếu phát hiện Fake. Đổi trả miễn phí size. FREE vệ sinh giày trọn đời. MUA NGAY!',
@@ -118,6 +127,7 @@ class ProductSeeder extends Seeder
                 'ID_Category' => 2,
                 'ID_Brand' => 2,
                 'Ten_SP' => 'Giày Nike Air Jordan 1 Low ‘Obsidian Ember Glow’ 553558-481',
+
                 'Gia_SP' => 500.000,
                 'Gia_SP2' => 800.000,
                 'Mo_Ta' => 'Mua Giày Nike Air Jordan 1 Low ‘Panda’ DC0774-101 chính hãng 100% có sẵn tại Authentic Shoes. Giao hàng miễn phí trong 1 ngày.Cam kết đền tiền X5 nếu phát hiện Fake. Đổi trả miễn phí size. FREE vệ sinh giày trọn đời. MUA NGAY!',
@@ -204,6 +214,37 @@ class ProductSeeder extends Seeder
                 'Anh_SP1' => 'https://cdn.authentic-shoes.com/wp-content/uploads/2023/04/jfhawjf_c4760653bb30444f8cc6914abb2050f3-600x201.png',
                 'Anh_SP2' => 'https://cdn.authentic-shoes.com/wp-content/uploads/2023/04/11001_2040442012219328502_06_d2216c4972ce45b89f996b9ad9eed49b-600x600.png',
             ],
-        ]);
+        ];
+        foreach ($products as &$product) {
+            // Tạo slug cho từng sản phẩm
+            $product['slug'] = $this->generateUniqueSlug($product['Ten_SP']);
+            // Chèn dữ liệu vào cơ sở dữ liệu
+            DB::table('products')->insert($product);
+        }
+    }
+    /**
+     * Generate slug từ tên sản phẩm.
+     *
+     * @param string $name
+     * @return string
+     */
+    private function generateUniqueSlug(string $name): string
+    {
+        // Loại bỏ dấu cách và các ký tự đặc biệt, thay thế chúng bằng gạch ngang
+        $slug = preg_replace('/[^A-Za-z0-9-]+/', '-', $name);
+        // Chuyển đổi slug thành chữ thường
+        $slug = strtolower($slug);
+        // Loại bỏ các ký tự gạch ngang ở đầu và cuối chuỗi
+        $slug = trim($slug, '-');
+
+        // Kiểm tra xem slug đã tồn tại trong cơ sở dữ liệu chưa
+        $existingSlug = DB::table('products')->where('slug', $slug)->exists();
+        
+        // Nếu slug đã tồn tại, thêm số ngẫu nhiên vào cuối slug để tạo slug duy nhất
+        if ($existingSlug) {
+            $slug .= '-' . uniqid();
+        }
+
+        return $slug;
     }
 }

@@ -5,6 +5,7 @@ use App\Http\Controllers\Apis\CategoryController;
 use App\Http\Controllers\Apis\EventsController;
 use App\Http\Controllers\Apis\ProductController;
 use App\Http\Controllers\Apis\SizegiayController;
+use App\Http\Controllers\SearchController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -58,4 +59,8 @@ Route::prefix('products')->group(function () {
 
 Route::prefix('size')->group(function () {
     Route::get('/', [SizegiayController::class, 'index'])->name('size.index');
+});
+
+Route::prefix('search')->group(function () {
+    Route::get('/', [SearchController::class, 'index'])->name('search.index');
 });
