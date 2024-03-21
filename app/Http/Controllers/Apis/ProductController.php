@@ -100,4 +100,17 @@ class ProductController extends Controller
             'data' => $product
         ]);
     }
+    public function timKiem(Request $request)
+    {
+        $searchQuery = $request->input('key');
+        $products = Product::where('name', 'like', '%' . $searchQuery . '%')
+            ->orWhereHas('category', function ($categoryQuery) use ($searchQuery) {
+                $categoryQuery->where('Name_Catogory', 'like', '%' . $searchQuery . '%');
+            })
+            ->get();
+
+        // Trả về dữ liệu dưới dạng JSON
+        return response()->json($products);
+    }
+
 }
