@@ -100,7 +100,7 @@ class ProductController extends Controller
             'data' => $product
         ]);
     }
-    public function timKiem(Request $request)
+    public function search(Request $request)
     {
         $searchQuery = $request->input('key');
         $products = Product::where('name', 'like', '%' . $searchQuery . '%')
@@ -109,7 +109,6 @@ class ProductController extends Controller
             })
             ->get();
 
-        // Trả về dữ liệu dưới dạng JSON
         return response()->json($products);
     }
 
