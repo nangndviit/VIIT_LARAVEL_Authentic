@@ -101,15 +101,17 @@ class ProductController extends Controller
         ]);
     }
     public function search(Request $request)
-    {
-        $searchQuery = $request->input('key');
-        $products = Product::where('name', 'like', '%' . $searchQuery . '%')
-            ->orWhereHas('category', function ($categoryQuery) use ($searchQuery) {
-                $categoryQuery->where('Name_Catogory', 'like', '%' . $searchQuery . '%');
-            })
-            ->get();
+{
+    $searchQuery = $request->input('key');
+    $products = Product::with('category')
+        ->where('Ten_SP', 'like', '%' . $searchQuery . '%')
+        ->orWhereHas('category', function ($categoryQuery) use ($searchQuery) {
+            $categoryQuery->where('Name_Catogory', 'like', '%' . $searchQuery . '%');
+        })
+        ->get();
 
-        return response()->json($products);
-    }
+    return response()->json($products);
+}
+
 
 }

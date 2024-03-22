@@ -62,5 +62,5 @@ Route::prefix('size')->group(function () {
 });
 
 Route::prefix('search')->group(function () {
-    Route::get('/search', [ProductController::class, 'getSearch'])->name('search.getSearch');
+    Route::get('/', [ProductController::class, 'search'])->name('search.getSearch');
 });
