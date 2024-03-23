@@ -101,17 +101,20 @@ class ProductController extends Controller
         ]);
     }
     public function search(Request $request)
-{
-    $searchQuery = $request->input('key');
-    $products = Product::with('category')
-        ->where('Ten_SP', 'like', '%' . $searchQuery . '%')
-        ->orWhereHas('category', function ($categoryQuery) use ($searchQuery) {
-            $categoryQuery->where('Name_Catogory', 'like', '%' . $searchQuery . '%');
-        })
-        ->get();
+    {
+        $searchQuery = $request->input('key');
+        $products = Product::with('category')
+            ->where('Ten_SP', 'like', '%' . $searchQuery . '%')
+            ->orWhereHas('category', function ($categoryQuery) use ($searchQuery) {
+                $categoryQuery->where('Name_Catogory', 'like', '%' . $searchQuery . '%');
+            })
+            ->get();
 
-    return response()->json($products);
-}
+        if ($products->isEmpty()) {
+            return response()->json(['message' => 'Không tìm thấy kết quả tìm kiếm.'], 404);
+        }
 
+        return response()->json($products);
+    }
 
 }
