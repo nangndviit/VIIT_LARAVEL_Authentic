@@ -22,7 +22,7 @@ class CategoryController extends Controller
         $categories = Category::all();
 
         foreach ($categories as $category) {
-            $category->setRelation('products', Product::where('ID_Category', $category->ID_Category)->limit(6)->get());
+            $category->setRelation('products', Product::where('ID_Category', $category->ID_Category)->limit(8)->get());
         }
 
         return response()->json([
