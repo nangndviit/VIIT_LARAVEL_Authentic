@@ -85,10 +85,26 @@ class CategoryController extends Controller
             ]);
         }
     }
-    /**
-     * Xóa category khỏi cơ sở dữ liệu.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    public function search(Request $request)
+    {
+        $searchQuery = $request->input('key');
+        $categories = Category::where('Name_Catogory', 'like', '%' . $searchQuery . '%')->get();
+    
+        if ($categories->isEmpty()) {
+            return response()->json(['message' => 'Không tìm thấy kết quả tìm kiếm.'], 404);
+        }
+    
+        $products = [];
+    
+        foreach ($categories as $category) {
+            $products[] = $category->products()->get();
+        }
+    
+        $mergedProducts = collect($products)->flatten();
+    
+        return response()->json($mergedProducts);
+    }
+    
+
+        
 }

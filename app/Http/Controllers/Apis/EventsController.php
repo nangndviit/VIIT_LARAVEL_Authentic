@@ -71,4 +71,14 @@ class EventsController extends Controller
             ]);
         }
     }
+    public function search(Request $request)
+    {
+        $keyword = $request->query('keyword');
+        if (!$keyword) {
+            return response()->json(['message' => 'Keyword is required.'], 400);
+        }
+
+        $events = Event::where('Ten_Events', 'like', "%$keyword%")->paginate(10);
+        return response()->json($events);
+    }
 }

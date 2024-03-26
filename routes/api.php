@@ -30,6 +30,7 @@ Route::prefix('cate')->group(function () {
     Route::put('update/{id}', [CategoryController::class, 'update'])->name('cate.update'); //sửa cate
     Route::delete('delete/{id}', [CategoryController::class, 'delete'])->name('cate.delete');   //xóa cate
     Route::get('findID', [CategoryController::class, 'findID'])->name('cate.findID'); //lấy sản phẩm theo id dã có trong dữ liệu
+    Route::get('search', [CategoryController::class, 'search'])->name('cate.search');
 });
 
 
@@ -43,7 +44,7 @@ Route::prefix('brand')->group(function () {
 Route::prefix('event')->group(function () {
     Route::get('index', [EventsController::class, 'index'])->name('event.index'); //lấy tất cả các event có trong dữ liệu
     Route::post('create', [EventsController::class, 'create'])->name('event.create'); //thêm event mới
-    Route::post('show', [EventsController::class, 'create'])->name('event.create'); //thêm event mới
+    Route::get('search', [EventsController::class, 'search'])->name('event.search'); //thêm event mới
     Route::put('update/{id}', [EventsController::class, 'update'])->name('event.update'); //sửa event
     Route::delete('delete/{id}', [EventsController::class, 'delete'])->name('event.delete');   //xóa event
 });
