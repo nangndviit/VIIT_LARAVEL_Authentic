@@ -39,6 +39,8 @@ Route::prefix('brand')->group(function () {
     Route::post('create', [BrandController::class, 'create'])->name('brand.create'); //thêm brand mới
     Route::put('update/{id}', [BrandController::class, 'update'])->name('brand.update'); //sửa brand
     Route::delete('delete/{id}', [BrandController::class, 'delete'])->name('brand.delete');   //xóa brand
+    Route::get('search', [BrandController::class, 'search'])->name('brand.search');
+    Route::get('takePounds/{id}', [BrandController::class, 'takePounds'])->name('brand.takePounds');
 });
 
 Route::prefix('event')->group(function () {

@@ -17,4 +17,5 @@ class SizegiayController extends Controller
         }
         return response()->json($sizes);
     }
+    
 }

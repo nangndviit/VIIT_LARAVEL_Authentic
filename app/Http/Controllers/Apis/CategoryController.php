@@ -103,8 +103,5 @@ class CategoryController extends Controller
         $mergedProducts = collect($products)->flatten();
     
         return response()->json($mergedProducts);
-    }
-    
-
-        
+    }        
 }

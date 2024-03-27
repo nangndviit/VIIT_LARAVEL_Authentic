@@ -62,10 +62,10 @@ class BrandController extends Controller
             'data' => $brand
         ]);
     }
+
     public function delete($id)
     {
         $brans = Brand::findOrFail($id);
-
         if ($brans->delete()) {
             return response()->json([
                 'status' => 200,
@@ -78,4 +78,39 @@ class BrandController extends Controller
             ]);
         }
     }
+
+    public function takePounds($id)
+    {
+        $brand = Brand::with('products.sizes')->find($id);
+        if (!$brand) {
+            return response()->json(['message' => 'Không tìm thấy thương hiệu'], 404);
+        }
+
+        return response()->json([
+            'data' => $brand
+        ]);
+    }
+
+    
+
+    public function search(Request $request)
+    {
+        $searchQuery = $request->input('key');
+        $brands = Brand::where('Name_Brand', 'like', '%' . $searchQuery . '%')->get();
+
+        if ($brands->isEmpty()) {
+            return response()->json(['message' => 'Không tìm thấy kết quả tìm kiếm.'], 404);
+        }
+
+        $products = [];
+
+        foreach ($brands as $brand) {
+            $products[] = $brand->products()->get();
+        }
+
+        $mergedProducts = collect($products)->flatten();
+
+        return response()->json($mergedProducts);
+    }
+
 }
