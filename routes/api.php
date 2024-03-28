@@ -62,6 +62,11 @@ Route::prefix('products')->group(function () {
 
 Route::prefix('size')->group(function () {
     Route::get('/', [SizegiayController::class, 'index'])->name('size.index');
+    Route::get('/show-all', [SizegiayController::class, 'show_all'])->name('size.show_all');
+    Route::get('/show-number', [SizegiayController::class, 'show_number'])->name('size.show_number');
+    Route::get('/show-letter', [SizegiayController::class, 'show_letter'])->name('size.show_letter');
+    Route::get('/show-ml', [SizegiayController::class, 'show_ml'])->name('size.show_ml');
+    Route::get('/show-one/{id}', [SizegiayController::class, 'show_one'])->name('size.show_one');
 });
 
 Route::prefix('search')->group(function () {
